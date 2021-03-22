@@ -2,7 +2,7 @@
     padding-top: 50px;
     padding-bottom: 47px;
 }
-.promo-title {
+.title {
     font-family: $title-font;
     font-style: normal;
     font-weight: 700;
@@ -12,7 +12,7 @@
     margin-bottom: 20px;
 }
 
-.promo-text {
+.text {
     font-family: Open Sans;
     font-style: normal;
     font-weight: normal;
@@ -49,4 +49,5 @@
 
 .promo-img-wrapper > img {
     width: 300px;
+    height: 229px;
 }

@@ -1,4 +1,113 @@
+.secondary-products {
+    padding-bottom: 230px;
+}
+
 .secondary-products-wrapper {
     display: flex;
     flex-direction: column-reverse;
+}
+
+.secondary-products-text {
+    line-height: 24px;
+    margin-bottom: 20px;
+}
+
+.secondary-products-btn {
+    margin-bottom: 19px;
+    padding-right: 33.5px;
+    padding-left: 33.5px;
+}
+.notice-text {
+    margin-bottom: 0px;
+}
+
+.secondary-products-img-wrapper {
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        top: 101px;
+        left: 0;
+        width: 172px;
+        height: 94px;
+        background-image: url(../images/dots.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        z-index: -2;
+        width: 254px;
+        height: 273px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-46%, -70%);
+        background-image: url(../images/vector-backgr.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+}
+
+.secondary-products-img-wrapper > img {
+    width: 300px;
+    height: 240px;
+}
+
+.secondary-products-notice-wrapper {
+    position: absolute;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+
+    top: 153px;
+    z-index: 1;
+
+    padding-top: 29px;
+    padding-bottom: 32px;
+    padding-left: 28px;
+    padding-right: 19px;
+
+    box-shadow: 0px 2px 16px rgba(32, 108, 164, 0.16);
+    border-radius: 8px;
+    background-color: #ffffff;
+}
+
+.secondary-products-notice-title {
+    font-size: 18px;
+    line-height: 18px;
+}
+
+.notice-icon {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #fee5ff;
+    margin-right: 10px;
+
+    &::before {
+        position: absolute;
+        content: '';
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-image: url(../images/pencil-icon.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+}
+
+.notice-text {
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 10px;
 }
