@@ -1,38 +1,23 @@
-console.log('ddd');
+const formRef = document.querySelector('.calculator-form');
+const calculatorPriceRef = document.querySelector('.calculator-price');
 
-const listTabs = document.querySelector('.list-tabs');
-const tabItem = document.querySelectorAll('.list-tab-item');
+formRef.addEventListener('submit', onHandlleReturnData);
 
-listTabs.addEventListener('click', showItem);
+function onHandlleReturnData(e) {
+    e.preventDefault();
+    const color = e.target[0].value;
+    const size = e.target[1].value;
+    const number = e.target[2].value;
+    const date = e.target[3].value;
+    const city = e.target[4].value;
+    const delivery = e.target[5].value;
+    const price = calculatorPriceRef.textContent;
 
-function showItem(e) {
-  onClickСrossHideItem(e);
-
-  if (e.target.classList[0] === 'list-tab-item-btn') {
-    tabItem.forEach(el => {
-      if (el.classList[2]) {
-        el.classList.remove('active-item');
-        el.children[2].classList.remove('hide-tab-btn');
-      }
-    });
-    e.target.offsetParent.classList.add('active-item');
-    e.target.classList.add('hide-tab-btn');
-  }
-}
-
-// eсли клик на крестик удаляем класы
-function onClickСrossHideItem(event) {
-  if (event.target.offsetParent.classList[2]) {
-    try {
-      if (event.target.previousElementSibling.nodeName === 'P') {
-        event.target.offsetParent.classList.remove('active-item');
-
-        tabItem.forEach(el => {
-          el.children[2].classList.remove('hide-tab-btn');
-        });
-      }
-    } catch {
-      (' error');
-    }
-  }
+    console.log(`Цвет товара --- ${color}, 
+    Размер --- ${size}
+    Количество --- ${number}
+    Дата доставки --- ${date}, 
+    Город доставки --- ${city},
+    Почта --- ${delivery}
+    Общая цена --- ${price}$`);
 }
