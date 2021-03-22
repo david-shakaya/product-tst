@@ -8,6 +8,45 @@
     font-weight: 700;
     font-size: 22px;
     line-height: 23px;
-
+    color: $title-color;
     margin-bottom: 20px;
+}
+
+.promo-text {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 27px;
+    color: $text-color;
+
+    margin-bottom: 30px;
+}
+
+.promo-btn {
+    padding-left: 93px;
+    padding-right: 93px;
+    margin-bottom: 38px;
+}
+.promo-img-wrapper {
+    position: relative;
+
+    &::before {
+        content: '';
+        // display: block;
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        transform: translate(15%, 11px);
+        width: 230px;
+        height: 218px;
+        background-image: url(../images/promo-image-backgr.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+}
+
+.promo-img-wrapper > img {
+    width: 300px;
 }

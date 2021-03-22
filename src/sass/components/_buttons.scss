@@ -1,0 +1,21 @@
+.btn {
+    border: none;
+    border-radius: 10px;
+
+    font-family: $text-font;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 100%;
+    color: #ffffff;
+    background-color: $accent-color;
+
+    padding-top: 16.5px;
+    padding-bottom: 16.5px;
+    padding-left: 83.5px;
+    padding-right: 83.5px;
+}
+
+.btn:hover {
+    box-shadow: 0px 5px 10px rgba(76, 174, 80, 0.3);
+}
