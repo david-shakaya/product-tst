@@ -1,5 +1,46 @@
-.calculator-form-colors {
+.calculator-form {
+    position: relative;
+}
+
+// .calculator-form-colors {
+//     width: 100%;
+//     padding-top: 12px;
+//     padding-bottom: 18px;
+//     padding-left: 20px;
+//     padding-right: 19px;
+//     background: #f9fafc;
+//     box-shadow: 0px 1px 3px rgba(5, 41, 83, 0.14);
+//     border-radius: 10px;
+//     border: none;
+//     opacity: 0;
+//     visibility: hidden;
+//     &:focus {
+//         border: 1px solid #c774ee;
+//         outline: none;
+//         visibility: hidden;
+//     }
+
+//     // &:hover {
+//     //     box-shadow: 4px 6px 10px rgba(0, 0, 0, 0.05);
+//     // }
+//     &:active {
+//         visibility: hidden;
+//     }
+// }
+
+// .select-color {
+//     width: 290px;
+// }
+.select-color.is-active .select-body {
+    position: absolute;
+    visibility: visible;
     width: 100%;
+    transition: 200ms;
+}
+
+.select-header {
+    cursor: pointer;
+    display: flex;
     padding-top: 12px;
     padding-bottom: 18px;
     padding-left: 20px;
@@ -9,16 +50,45 @@
     border-radius: 10px;
     border: none;
 
-    &:focus {
-        border: 1px solid #c774ee;
-        outline: none;
-    }
-
-    &:hover {
-        box-shadow: 4px 6px 10px rgba(0, 0, 0, 0.05);
-    }
+    margin-bottom: 24px;
+}
+.select-current,
+.select-item-text {
+    font-size: 15px;
+    line-height: 20px;
+    font-family: $text-font;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 20px;
+    color: $title-color;
+}
+.select-item-text {
+    margin-bottom: 21px;
+}
+.select-icon {
+    align-items: center;
+    display: flex;
+    flex-shrink: 0;
+    justify-content: center;
+    height: 20px;
+    margin-left: auto;
+    text-align: center;
+    width: 20px;
 }
 
-.calculator-form-colors option {
-    display: none;
+.select-body {
+    padding-top: 24px;
+    padding-left: 24px;
+    padding-right: 24px;
+    position: absolute;
+    visibility: hidden;
+
+    box-shadow: 4px 6px 10px rgba(0, 0, 0, 0.05);
+
+    background: #f9fafc;
+    width: 0px;
+}
+.select-item {
+    cursor: pointer;
 }

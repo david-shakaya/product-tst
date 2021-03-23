@@ -5,13 +5,27 @@
             Nam libero tempore, cum soluta nobis est eligendi optio
         </p>
         <form name="calculator-form" class="calculator-form">
-            <select id="colors" name="colors" class="calculator-form-colors">
-                <option value="Не выбрано" style="display: none">Colors</option>
-                <option value="red">red</option>
-                <option value="green">green</option>
-                <option value="blue">blue</option>
-                <option value="orange">orange</option>
-            </select>
+            <div class="select-color">
+                <div class="select-header">
+                    <span class="select-current">Colors</span>
+                    <div class="select-icon">&times;</div>
+                </div>
+
+                <ul class="select-body">
+                    <li class="select-item">
+                        <p class="select-item-text">red</p>
+                    </li>
+                    <li class="select-item">
+                        <p class="select-item-text">green</p>
+                    </li>
+                    <li class="select-item">
+                        <p class="select-item-text">blue</p>
+                    </li>
+                    <li class="select-item">
+                        <p class="select-item-text">orange</p>
+                    </li>
+                </ul>
+            </div>
             <select id="size" name="size">
                 <option value="Не выбрано" style="display: none">Size</option>
                 <option value="100%">100%</option>
