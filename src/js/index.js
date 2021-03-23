@@ -38,6 +38,7 @@ let select = function () {
 
     function selectToggle() {
         this.parentElement.classList.toggle('is-active');
+        this.classList.toggle('active');
     }
 
     function selectChoose() {
@@ -47,6 +48,8 @@ let select = function () {
         currentText.innerText = text;
         valueDiv = text;
         select.classList.remove('is-active');
+        // this.classList.remove('active');
+        this.parentElement.parentElement.children[0].classList.remove('active');
     }
 };
 

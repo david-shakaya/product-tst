@@ -1,3 +1,19 @@
+.calculator {
+    padding-top: 24px;
+    padding-bottom: 42px;
+}
+
+.title-second.title {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.calculator-text.text {
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    margin-bottom: 40px;
+}
 .calculator-form {
     position: relative;
 }
@@ -49,8 +65,14 @@
     box-shadow: 0px 1px 3px rgba(5, 41, 83, 0.14);
     border-radius: 10px;
     border: none;
-
     margin-bottom: 24px;
+
+    &:hover {
+        box-shadow: 4px 6px 10px rgba(0, 0, 0, 0.05);
+    }
+}
+.select-header.active {
+    border: 1px solid #c774ee;
 }
 .select-current,
 .select-item-text {
