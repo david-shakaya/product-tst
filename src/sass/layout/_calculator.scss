@@ -47,6 +47,7 @@
 // .select-color {
 //     width: 290px;
 // }
+
 .select-color.is-active .select-body {
     position: absolute;
     visibility: visible;
@@ -113,4 +114,19 @@
 }
 .select-item {
     cursor: pointer;
+}
+
+.select-icon {
+    background-image: url('../images/arrow.png');
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.select-color .select-icon {
+    transition: 250ms;
+}
+
+.select-color.is-active .select-icon {
+    transform: rotate(180deg);
+    transition: 250ms;
 }
