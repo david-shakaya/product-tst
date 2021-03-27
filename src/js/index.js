@@ -4,16 +4,16 @@ const calculatorPriceRef = document.querySelector('.calculator-price');
 formRef.addEventListener('submit', onHandlleReturnData);
 
 let valueColor = 'Не выбрано';
-let valuSize = 'Не выбрано';
+let valueSize = 'Не выбрано';
 
 function onHandlleReturnData(e) {
     e.preventDefault();
     const color = valueColor;
-    const size = valuSize;
-    const number = e.target[1].value;
-    const date = e.target[2].value;
-    const city = e.target[3].value;
-    const delivery = e.target[4].value;
+    const size = valueSize;
+    const number = e.target[0].value;
+    const date = e.target[1].value;
+    const city = e.target[2].value;
+    const delivery = e.target[3].value;
     const price = calculatorPriceRef.textContent;
 
     console.log(`Цвет товара --- ${color}, 
@@ -51,4 +51,31 @@ let selectColor = function () {
     }
 };
 
+let selectSize = function () {
+    let selectHeader = document.querySelector('.select-header-size');
+    let selectItem = document.querySelectorAll('.select-item-size');
+
+    selectHeader.addEventListener('click', selectToggle);
+
+    selectItem.forEach(item => {
+        item.addEventListener('click', selectChoose);
+    });
+
+    function selectToggle() {
+        this.parentElement.classList.toggle('is-active');
+        this.classList.toggle('active');
+    }
+
+    function selectChoose() {
+        const select = this.closest('.select');
+        const currentTextColor = select.querySelector('.select-current-size');
+        currentTextColor.innerText = this.innerText;
+        valueSize = this.innerText;
+
+        select.classList.remove('is-active');
+        this.parentElement.parentElement.children[0].classList.remove('active');
+    }
+};
+
 selectColor();
+selectSize();
