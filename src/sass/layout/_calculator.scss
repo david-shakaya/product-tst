@@ -48,7 +48,7 @@
 //     width: 290px;
 // }
 
-.select-color.is-active .select-body {
+.select.is-active .select-body {
     position: absolute;
     visibility: visible;
     width: 100%;
@@ -122,11 +122,11 @@
     background-repeat: no-repeat;
     background-position: center;
 }
-.select-color .select-icon {
+.select .select-icon {
     transition: 250ms;
 }
 
-.select-color.is-active .select-icon {
+.select.is-active .select-icon {
     transform: rotate(180deg);
     transition: 250ms;
 }

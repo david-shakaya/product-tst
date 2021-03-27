@@ -3,12 +3,13 @@ const calculatorPriceRef = document.querySelector('.calculator-price');
 
 formRef.addEventListener('submit', onHandlleReturnData);
 
-let valueDiv = 'Не выбрано';
+let valueColor = 'Не выбрано';
+let valuSize = 'Не выбрано';
 
 function onHandlleReturnData(e) {
     e.preventDefault();
-    const color = valueDiv;
-    const size = e.target[0].value;
+    const color = valueColor;
+    const size = valuSize;
     const number = e.target[1].value;
     const date = e.target[2].value;
     const city = e.target[3].value;
@@ -24,13 +25,11 @@ function onHandlleReturnData(e) {
     Общая цена --- ${price}$`);
 }
 
-let select = function () {
-    let selectHeader = document.querySelectorAll('.select-header');
-    let selectItem = document.querySelectorAll('.select-item');
+let selectColor = function () {
+    let selectHeader = document.querySelector('.select-header-color');
+    let selectItem = document.querySelectorAll('.select-item-color');
 
-    selectHeader.forEach(item => {
-        item.addEventListener('click', selectToggle);
-    });
+    selectHeader.addEventListener('click', selectToggle);
 
     selectItem.forEach(item => {
         item.addEventListener('click', selectChoose);
@@ -42,15 +41,14 @@ let select = function () {
     }
 
     function selectChoose() {
-        let text = this.innerText,
-            select = this.closest('.select-color'),
-            currentText = select.querySelector('.select-current');
-        currentText.innerText = text;
-        valueDiv = text;
+        const select = this.closest('.select-color');
+        const currentTextColor = select.querySelector('.select-current-color');
+        currentTextColor.innerText = this.innerText;
+        valueColor = this.innerText;
+
         select.classList.remove('is-active');
-        // this.classList.remove('active');
         this.parentElement.parentElement.children[0].classList.remove('active');
     }
 };
 
-select();
+selectColor();
