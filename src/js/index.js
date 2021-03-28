@@ -1,5 +1,11 @@
 const formRef = document.querySelector('.calculator-form');
 const calculatorPriceRef = document.querySelector('.calculator-price');
+const inputControlPlusRef = document.querySelector(
+    '.calculator-input-control-plus',
+);
+const inputControlMinusRef = document.querySelector(
+    '.calculator-input-control-minus',
+);
 
 formRef.addEventListener('submit', onHandlleReturnData);
 
@@ -76,6 +82,21 @@ let selectSize = function () {
         this.parentElement.parentElement.children[0].classList.remove('active');
     }
 };
+
+// Input typr Bumbert Logik
+inputControlPlusRef.addEventListener('click', plusValueInput);
+inputControlMinusRef.addEventListener('click', minusValueInput);
+
+function plusValueInput() {
+    let inputValue = Number(formRef[0].value);
+    inputValue += 1;
+    formRef[0].value = inputValue;
+}
+function minusValueInput() {
+    let inputValue = Number(formRef[0].value);
+    inputValue -= 1;
+    formRef[0].value = inputValue;
+}
 
 selectColor();
 selectSize();

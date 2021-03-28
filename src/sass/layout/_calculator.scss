@@ -101,10 +101,11 @@
 }
 
 .select-body {
+    position: absolute;
+    z-index: 1;
     padding-top: 24px;
     padding-left: 24px;
     padding-right: 24px;
-    position: absolute;
     visibility: hidden;
 
     box-shadow: 4px 6px 10px rgba(0, 0, 0, 0.05);
@@ -133,16 +134,14 @@
 
 .calculator-input-number.select-header {
     width: 300px;
-    padding-left: 132px;
-    padding-right: 132px;
+    padding-left: 35px;
+    padding-right: 35px;
+    text-align: center;
     font-family: Open Sans;
     font-style: normal;
     font-weight: normal;
     font-size: 15px;
     line-height: 20px;
-
-    /* Text / Title */
-
     color: #111563;
 
     &:focus {
@@ -152,6 +151,7 @@
 }
 // ______________________________________________
 .calculator-input-control-minus {
+    cursor: pointer;
     position: absolute;
     display: inline-block;
     width: 14px;
@@ -161,6 +161,7 @@
     background-image: url('../images/minus.png');
 }
 .calculator-input-control-plus {
+    cursor: pointer;
     position: absolute;
     display: inline-block;
     width: 14px;
@@ -168,4 +169,12 @@
     transform: translate(267px, -57px);
     display: inline-block;
     background-image: url('../images/plus.png');
+}
+
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+    background: #0a377e;
+    margin: 0;
 }
