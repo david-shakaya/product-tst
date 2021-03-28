@@ -7,7 +7,9 @@
         <form name="calculator-form" class="calculator-form">
             <div class="select select-color">
                 <div class="select-header select-header-color">
-                    <span class="select-current-color">Colors</span>
+                    <span class="select-current-color select-current"
+                        >Colors</span
+                    >
                     <div class="select-icon"></div>
                 </div>
 
@@ -29,29 +31,30 @@
 
             <div class="select select-size">
                 <div class="select-header select-header-size">
-                    <span class="select-current-size">Size</span>
+                    <span class="select-current-size select-current">Size</span>
                     <div class="select-icon"></div>
                 </div>
 
                 <ul class="select-body">
                     <li class="select-item select-item-size">
-                        <p class="select-item-text">red</p>
+                        <p class="select-item-text">100%</p>
                     </li>
                     <li class="select-item select-item-size">
-                        <p class="select-item-text">blue</p>
+                        <p class="select-item-text">150%</p>
                     </li>
                     <li class="select-item select-item-size">
-                        <p class="select-item-text">orange</p>
+                        <p class="select-item-text">200%</p>
                     </li>
                 </ul>
             </div>
-            <!-- <select id="size" name="size">
-                <option value="Не выбрано" style="display: none">Size</option>
-                <option value="100%">100%</option>
-                <option value="150%">150%</option>
-                <option value="200%">200%</option>
-            </select> -->
-            <input type="number" value="100" min="0" />
+            <input
+                class="calculator-input-number select-header"
+                type="number"
+                value="100"
+                min="0"
+            />
+            <span class="calculator-input-control-plus"></span>
+            <span class="calculator-input-control-minus"></span>
             <input type="date" />
             <p class="calculator-price">56.25</p>
             <select id="city" name="city">

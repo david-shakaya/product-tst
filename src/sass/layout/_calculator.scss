@@ -130,3 +130,42 @@
     transform: rotate(180deg);
     transition: 250ms;
 }
+
+.calculator-input-number.select-header {
+    width: 300px;
+    padding-left: 132px;
+    padding-right: 132px;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 20px;
+
+    /* Text / Title */
+
+    color: #111563;
+
+    &:focus {
+        border: 1px solid #c774ee;
+        outline: none;
+    }
+}
+// ______________________________________________
+.calculator-input-control-minus {
+    position: absolute;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    transform: translate(20px, -57px);
+    display: inline-block;
+    background-image: url('../images/minus.png');
+}
+.calculator-input-control-plus {
+    position: absolute;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    transform: translate(267px, -57px);
+    display: inline-block;
+    background-image: url('../images/plus.png');
+}
