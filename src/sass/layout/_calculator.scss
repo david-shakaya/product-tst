@@ -133,7 +133,7 @@
 }
 
 .calculator-input-number.select-header {
-    width: 300px;
+    width: 100%;
     padding-left: 35px;
     padding-right: 35px;
     text-align: center;
@@ -177,4 +177,23 @@ input[type='number']::-webkit-inner-spin-button {
     -moz-appearance: textfield;
     background: #0a377e;
     margin: 0;
+}
+
+// ___________________________________
+
+.calculator-label-date.text {
+    font-size: 15px;
+}
+.calculator-input-date {
+    width: 100%;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 20px;
+    color: #111563;
+    &:focus {
+        border: 1px solid #c774ee;
+        outline: none;
+    }
 }
