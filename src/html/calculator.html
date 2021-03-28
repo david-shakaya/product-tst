@@ -64,13 +64,34 @@
                 />
             </label>
             <p class="calculator-price">56.25</p>
-            <select id="city" name="city">
+            <!-- <select id="city" name="city">
                 <option value="Не выбрано" style="display: none">City</option>
                 <option value="kyiv">Kyiv</option>
                 <option value="odessa">Odessa</option>
                 <option value="rivne">Rivne</option>
                 <option value="lviv">Lviv</option>
-            </select>
+            </select> -->
+            <div class="select select-city">
+                <div class="select-header select-header-city">
+                    <span class="select-current-city select-current">City</span>
+                    <div class="select-icon"></div>
+                </div>
+
+                <ul class="select-body">
+                    <li class="select-item select-item-city">
+                        <p class="select-item-text">Kyiv</p>
+                    </li>
+                    <li class="select-item select-item-city">
+                        <p class="select-item-text">Odessa</p>
+                    </li>
+                    <li class="select-item select-item-city">
+                        <p class="select-item-text">Rivne</p>
+                    </li>
+                    <li class="select-item select-item-city">
+                        <p class="select-item-text">Lviv</p>
+                    </li>
+                </ul>
+            </div>
             <select id="delivery" name="delivery">
                 <option value="Не выбрано" style="display: none">
                     Delivery

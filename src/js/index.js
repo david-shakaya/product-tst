@@ -83,6 +83,32 @@ let selectSize = function () {
     }
 };
 
+let selectCity = function () {
+    let selectHeader = document.querySelector('.select-header-city');
+    let selectItem = document.querySelectorAll('.select-item-city');
+
+    selectHeader.addEventListener('click', selectToggle);
+
+    selectItem.forEach(item => {
+        item.addEventListener('click', selectChoose);
+    });
+
+    function selectToggle() {
+        this.parentElement.classList.toggle('is-active');
+        this.classList.toggle('active');
+    }
+
+    function selectChoose() {
+        const select = this.closest('.select');
+        const currentTextColor = select.querySelector('.select-current-city');
+        currentTextColor.innerText = this.innerText;
+        valueSize = this.innerText;
+
+        select.classList.remove('is-active');
+        this.parentElement.parentElement.children[0].classList.remove('active');
+    }
+};
+
 // Input typr Bumbert Logik
 inputControlPlusRef.addEventListener('click', plusValueInput);
 inputControlMinusRef.addEventListener('click', minusValueInput);
@@ -100,6 +126,7 @@ function minusValueInput() {
 
 selectColor();
 selectSize();
+selectCity();
 
 function setDateNowInput() {
     let today = new Date();
