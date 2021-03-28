@@ -197,3 +197,15 @@ input[type='number']::-webkit-inner-spin-button {
         outline: none;
     }
 }
+
+@media screen and (max-width: 1259px) {
+    .calculator-price {
+        position: absolute;
+        bottom: 0;
+        transform: translate(50%, -52px);
+    }
+}
+
+.calculator-form-btn {
+    margin-top: 75px;
+}

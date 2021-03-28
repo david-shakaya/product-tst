@@ -1,3 +1,5 @@
+console.log('dd');
+
 const formRef = document.querySelector('.calculator-form');
 const calculatorPriceRef = document.querySelector('.calculator-price');
 const inputControlPlusRef = document.querySelector(
@@ -11,6 +13,8 @@ formRef.addEventListener('submit', onHandlleReturnData);
 
 let valueColor = 'Не выбрано';
 let valueSize = 'Не выбрано';
+let valueCity = 'Не выбрано';
+let valueDelivery = 'Не выбрано';
 
 function onHandlleReturnData(e) {
     e.preventDefault();
@@ -18,8 +22,8 @@ function onHandlleReturnData(e) {
     const size = valueSize;
     const number = e.target[0].value;
     const date = e.target[1].value;
-    const city = e.target[2].value;
-    const delivery = e.target[3].value;
+    const city = valueCity;
+    const delivery = valueDelivery;
     const price = calculatorPriceRef.textContent;
 
     console.log(`Цвет товара --- ${color}, 
@@ -102,7 +106,35 @@ let selectCity = function () {
         const select = this.closest('.select');
         const currentTextColor = select.querySelector('.select-current-city');
         currentTextColor.innerText = this.innerText;
-        valueSize = this.innerText;
+        valueCity = this.innerText;
+
+        select.classList.remove('is-active');
+        this.parentElement.parentElement.children[0].classList.remove('active');
+    }
+};
+
+let selectDelivery = function () {
+    let selectHeader = document.querySelector('.select-header-delivery');
+    let selectItem = document.querySelectorAll('.select-item-delivery');
+
+    selectHeader.addEventListener('click', selectToggle);
+
+    selectItem.forEach(item => {
+        item.addEventListener('click', selectChoose);
+    });
+
+    function selectToggle() {
+        this.parentElement.classList.toggle('is-active');
+        this.classList.toggle('active');
+    }
+
+    function selectChoose() {
+        const select = this.closest('.select');
+        const currentTextColor = select.querySelector(
+            '.select-current-delivery',
+        );
+        currentTextColor.innerText = this.innerText;
+        valueDelivery = this.innerText;
 
         select.classList.remove('is-active');
         this.parentElement.parentElement.children[0].classList.remove('active');
@@ -127,6 +159,7 @@ function minusValueInput() {
 selectColor();
 selectSize();
 selectCity();
+selectDelivery();
 
 function setDateNowInput() {
     let today = new Date();
