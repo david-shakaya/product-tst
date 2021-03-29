@@ -197,3 +197,27 @@ setDateNowInput();
 
 console.dir(formRef.children[7]);
 console.dir((formRef.children[6].textContent = price));
+
+// КАК єьо работает
+// active;
+
+// Нужно реализовать переключение слайдов по нажатию на кнопку
+const listStepBtn = document.querySelector('.how-works-list');
+listStepBtn.addEventListener('click', addActiveClass);
+const visibleStepEl = document.querySelector(
+    '.display-none.how-works-step-wrapper',
+);
+
+function addActiveClass(e) {
+    const btnStep = document.querySelectorAll('.how-works-item-btn.active');
+    if (e.target.className !== 'how-works-item-btn') {
+        return;
+    }
+    // showBlock(e.target.textContent);
+
+    btnStep.forEach(el => {
+        el.classList.remove('active');
+    });
+
+    e.target.classList.add('active');
+}
