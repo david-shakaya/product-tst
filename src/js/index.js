@@ -14,10 +14,6 @@ let valueSize = 'Не выбрано';
 let valueCity = 'Не выбрано';
 let valueDelivery = 'Не выбрано';
 let price = 54.13 + '$';
-let priceDom = () => {
-    let q = price.slice(0, -1);
-    return Number(q).toFixed(2) + '$';
-};
 
 function onHandlleReturnData(e) {
     e.preventDefault();
@@ -111,22 +107,6 @@ let selectCity = function () {
         currentTextColor.innerText = this.innerText;
         valueCity = this.innerText;
 
-        const newPrice = +price.slice(0, -1);
-        switch (this.innerText) {
-            case 'Kyiv':
-                price = `${+newPrice + 16.23}$`;
-                break;
-            case 'Odessa':
-                price = `${+newPrice + 12.03}$`;
-                break;
-            case 'Rivne':
-                price = `${+newPrice + 22.37}$`;
-                break;
-            case 'Lviv':
-                price = `${+newPrice + 44.33}$`;
-                break;
-        }
-        formRef.children[6].textContent = priceDom();
         select.classList.remove('is-active');
         this.parentElement.parentElement.children[0].classList.remove('active');
     }
@@ -166,23 +146,35 @@ inputControlMinusRef.addEventListener('click', minusValueInput);
 
 function plusValueInput() {
     const newPrice = price.slice(0, -1);
-
     let inputValue = Number(formRef[0].value);
     inputValue += 1;
+
     price = `${+newPrice * 2}$`;
 
+    if (inputValue === 1) {
+        price = 54.13 + '$';
+        formRef.children[6].textContent = price;
+    }
+
     formRef[0].value = inputValue;
-    formRef.children[6].textContent = priceDom();
+    formRef.children[6].textContent = price;
 }
 function minusValueInput() {
     let inputValue = Number(formRef[0].value);
     inputValue -= 1;
     formRef[0].value = inputValue;
 
+    if (inputValue <= 0) {
+        formRef[0].value = 0;
+        // 54.13 + '$';
+        price = 0 + '$';
+        formRef.children[6].textContent = price;
+    }
+
     //
     const newPrice = price.slice(0, -1);
     price = `${+newPrice / 2}$`;
-    formRef.children[6].textContent = priceDom();
+    formRef.children[6].textContent = price;
 }
 
 selectColor();
