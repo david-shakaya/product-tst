@@ -179,6 +179,10 @@ input[type='number']::-webkit-inner-spin-button {
     margin: 0;
 }
 
+.select-header.select-header-delivery {
+    margin-bottom: 0;
+}
+
 // ___________________________________
 
 .calculator-label-date.text {
@@ -202,10 +206,25 @@ input[type='number']::-webkit-inner-spin-button {
     .calculator-price {
         position: absolute;
         bottom: 0;
-        transform: translate(50%, -52px);
+        left: 50%;
+        transform: translate(-50%, -75px);
     }
 }
 
 .calculator-form-btn {
     margin-top: 75px;
+}
+
+.calculator-price {
+    font-family: Epilogue;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 23px;
+
+    color: $accent-color;
+}
+
+.calculator-form-btn.btn {
+    width: 100%;
 }
