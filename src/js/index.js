@@ -1,5 +1,3 @@
-console.log('dd');
-
 const formRef = document.querySelector('.calculator-form');
 const calculatorPriceRef = document.querySelector('.calculator-price');
 const inputControlPlusRef = document.querySelector(
@@ -15,6 +13,11 @@ let valueColor = 'Не выбрано';
 let valueSize = 'Не выбрано';
 let valueCity = 'Не выбрано';
 let valueDelivery = 'Не выбрано';
+let price = 54.13 + '$';
+let priceDom = () => {
+    let q = price.slice(0, -1);
+    return Number(q).toFixed(2) + '$';
+};
 
 function onHandlleReturnData(e) {
     e.preventDefault();
@@ -32,7 +35,7 @@ function onHandlleReturnData(e) {
     Дата доставки --- ${date}, 
     Город доставки --- ${city},
     Почта --- ${delivery}
-    Общая цена --- ${price}$`);
+    Общая цена --- ${price}`);
 }
 
 let selectColor = function () {
@@ -108,6 +111,22 @@ let selectCity = function () {
         currentTextColor.innerText = this.innerText;
         valueCity = this.innerText;
 
+        const newPrice = +price.slice(0, -1);
+        switch (this.innerText) {
+            case 'Kyiv':
+                price = `${+newPrice + 16.23}$`;
+                break;
+            case 'Odessa':
+                price = `${+newPrice + 12.03}$`;
+                break;
+            case 'Rivne':
+                price = `${+newPrice + 22.37}$`;
+                break;
+            case 'Lviv':
+                price = `${+newPrice + 44.33}$`;
+                break;
+        }
+        formRef.children[6].textContent = priceDom();
         select.classList.remove('is-active');
         this.parentElement.parentElement.children[0].classList.remove('active');
     }
@@ -146,14 +165,24 @@ inputControlPlusRef.addEventListener('click', plusValueInput);
 inputControlMinusRef.addEventListener('click', minusValueInput);
 
 function plusValueInput() {
+    const newPrice = price.slice(0, -1);
+
     let inputValue = Number(formRef[0].value);
     inputValue += 1;
+    price = `${+newPrice * 2}$`;
+
     formRef[0].value = inputValue;
+    formRef.children[6].textContent = priceDom();
 }
 function minusValueInput() {
     let inputValue = Number(formRef[0].value);
     inputValue -= 1;
     formRef[0].value = inputValue;
+
+    //
+    const newPrice = price.slice(0, -1);
+    price = `${+newPrice / 2}$`;
+    formRef.children[6].textContent = priceDom();
 }
 
 selectColor();
@@ -171,3 +200,8 @@ function setDateNowInput() {
     return (formRef[1].value = today);
 }
 setDateNowInput();
+
+//Для изменения  прайся
+
+console.dir(formRef.children[7]);
+console.dir((formRef.children[6].textContent = price));
