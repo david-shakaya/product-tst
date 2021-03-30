@@ -67,8 +67,12 @@
 .display-none {
     visibility: hidden;
     position: absolute;
+    transform: translateX(-110%);
+    transition: 200ms;
 }
 .how-works-step-wrapper.active {
     visibility: visible;
     position: static;
+    transform: translateX(0%);
+    transition: 250ms;
 }
