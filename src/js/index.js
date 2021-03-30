@@ -203,12 +203,22 @@ console.dir((formRef.children[6].textContent = price));
 
 // Нужно реализовать переключение слайдов по нажатию на кнопку
 const listStepBtn = document.querySelector('.how-works-list');
-listStepBtn.addEventListener('click', addActiveClass);
-const visibleStepEl = document.querySelector(
+listStepBtn.addEventListener('click', addActiveClassOnBtn);
+const visibleStepEl = document.querySelectorAll(
     '.display-none.how-works-step-wrapper',
 );
 
-function addActiveClass(e) {
+function addActiveClassOnSlide(textBtn) {
+    visibleStepEl.forEach(el => {
+        el.classList.remove('active');
+        console.log(el.dataset.id);
+        if (textBtn === el.dataset.id) {
+            el.classList.add('active');
+        }
+    });
+}
+
+function addActiveClassOnBtn(e) {
     const btnStep = document.querySelectorAll('.how-works-item-btn.active');
     if (e.target.className !== 'how-works-item-btn') {
         return;
@@ -220,4 +230,5 @@ function addActiveClass(e) {
     });
 
     e.target.classList.add('active');
+    addActiveClassOnSlide(e.target.textContent);
 }

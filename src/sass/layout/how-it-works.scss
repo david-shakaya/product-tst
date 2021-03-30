@@ -65,19 +65,10 @@
     }
 }
 .display-none {
-    display: none;
+    visibility: hidden;
+    position: absolute;
 }
-.how-works-step-wrapper {
-    &-1 {
-        display: block;
-    }
-    &-2 {
-        display: block;
-    }
-    &-3 {
-        display: block;
-    }
-    &-4 {
-        display: block;
-    }
+.how-works-step-wrapper.active {
+    visibility: visible;
+    position: static;
 }
